@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float fipperDamper = 150f;
     [SerializeField] HingeJoint leftHinge;
     [SerializeField] HingeJoint rightHinge;
-    bool press = false;
 
     
 

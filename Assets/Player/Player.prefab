@@ -168,6 +168,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9769c2d09daa6c542b514bce289ba06b,
         type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9769c2d09daa6c542b514bce289ba06b,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -179,7 +184,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9769c2d09daa6c542b514bce289ba06b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9769c2d09daa6c542b514bce289ba06b,
         type: 3}
@@ -256,6 +261,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftPad
       objectReference: {fileID: 0}
+    - target: {fileID: 9084867732053843440, guid: 9769c2d09daa6c542b514bce289ba06b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 89c4078819575e04ba60fe485c1472e2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8934777400606672865, guid: 9769c2d09daa6c542b514bce289ba06b, type: 3}
@@ -391,6 +401,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9769c2d09daa6c542b514bce289ba06b,
         type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9769c2d09daa6c542b514bce289ba06b,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -402,7 +417,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9769c2d09daa6c542b514bce289ba06b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.4
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9769c2d09daa6c542b514bce289ba06b,
         type: 3}
@@ -479,6 +494,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightPad
       objectReference: {fileID: 0}
+    - target: {fileID: 9084867732053843440, guid: 9769c2d09daa6c542b514bce289ba06b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 89c4078819575e04ba60fe485c1472e2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8934777400606672865, guid: 9769c2d09daa6c542b514bce289ba06b, type: 3}

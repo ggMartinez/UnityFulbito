@@ -6,27 +6,44 @@ public class BallController : MonoBehaviour
 {
 
     [SerializeField] Rigidbody rb;
-    [SerializeField] float velocity;
+    [SerializeField] float maxSpeed = 5f;
+    [SerializeField] float minSpeed = 2f;
     [SerializeField] Transform spawnPoint;
     Vector3 lastVelocity;
 
 
-    void OnTriggerEnter(Collider trigger)
-    {
-        if (trigger.gameObject.name == "PitchPlayer1") Debug.Log("Player 1 Scored!");
-        if (trigger.gameObject.name == "PitchPlayer2") Debug.Log("Player 2 Scored!");
-        transform.position = spawnPoint.position;
-        
-       
-    }
+
 
 
    void Start(){
-       rb.velocity = new Vector3(3f,0f,3f);
+        lastVelocity = new Vector3(0f,0f,0f);
+        // get a random number between -1 and 1
+        //rb.velocity = new Vector3(Random.Range(-minSpeed,maxSpeed),0,Random.Range(-minSpeed,maxSpeed));
+        rb.velocity = new Vector3(4f,0,4f);
+
+        
+
    }
     void FixedUpdate(){
+        Debug.Log("Velocity: " + rb.velocity + ", Magnitude: " + rb.velocity.magnitude);
         lastVelocity = rb.velocity;
-        if(rb.velocity.x == 0f || rb.velocity.z == 0f) rb.velocity = new Vector3(3f,0f,3f);
+        keepFluidMovement();
+        
+
+    }
+
+    void keepFluidMovement(){
+        if(rb.velocity.magnitude < maxSpeed){
+           rb.velocity = new Vector3(maxSpeed * randomSign(), 0f, maxSpeed * randomSign());
+        }
+        // if(Mathf.Abs(rb.velocity.x) < minSpeed || Mathf.Abs(rb.velocity.z) < minSpeed){
+        //     rb.velocity = new Vector3(Random.Range(-minSpeed,maxSpeed),0,Random.Range(-minSpeed,maxSpeed));
+        // }
+
+        // if(Mathf.Abs(rb.velocity.x) < 3f && Mathf.Abs(rb.velocity.z) < 3f){
+        //     rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxSpeed, maxSpeed),0,Mathf.Clamp(rb.velocity.z, -maxSpeed, maxSpeed));
+        // }
+
     }
 
     void OnCollisionEnter(Collision collision){
@@ -35,9 +52,20 @@ public class BallController : MonoBehaviour
         rb.velocity = direction * Mathf.Max(speed,0f);
     }
 
+    void OnTriggerEnter(Collider trigger)
+    {
+        if (trigger.gameObject.name == "PitchPlayer1") Debug.Log("Player 1 Scored!");
+        if (trigger.gameObject.name == "PitchPlayer2") Debug.Log("Player 2 Scored!");
+        transform.position = spawnPoint.position;
+       
+    }
 
-    
-
+    float randomSign()
+    {
+        if (Random.value >= 0.5)
+            return 1f;
+        return -1f;
+    }
 
 
 }

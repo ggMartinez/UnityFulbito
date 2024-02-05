@@ -33,16 +33,13 @@ public class BallController : MonoBehaviour
     }
 
     void keepFluidMovement(){
-        if(rb.velocity.magnitude < maxSpeed){
+        if(rb.velocity.magnitude < maxSpeed)
            rb.velocity = new Vector3(maxSpeed * randomSign(), 0f, maxSpeed * randomSign());
-        }
-        // if(Mathf.Abs(rb.velocity.x) < minSpeed || Mathf.Abs(rb.velocity.z) < minSpeed){
-        //     rb.velocity = new Vector3(Random.Range(-minSpeed,maxSpeed),0,Random.Range(-minSpeed,maxSpeed));
-        // }
-
-        // if(Mathf.Abs(rb.velocity.x) < 3f && Mathf.Abs(rb.velocity.z) < 3f){
-        //     rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxSpeed, maxSpeed),0,Mathf.Clamp(rb.velocity.z, -maxSpeed, maxSpeed));
-        // }
+        
+       
+        
+        if(Mathf.Abs(rb.velocity.z) < 1.5f )
+            rb.velocity = new Vector3(rb.velocity.x,0f,minSpeed * randomSign());
 
     }
 

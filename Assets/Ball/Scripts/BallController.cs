@@ -16,16 +16,13 @@ public class BallController : MonoBehaviour
 
 
    void Start(){
-        lastVelocity = new Vector3(0f,0f,0f);
-        // get a random number between -1 and 1
-        //rb.velocity = new Vector3(Random.Range(-minSpeed,maxSpeed),0,Random.Range(-minSpeed,maxSpeed));
-        rb.velocity = new Vector3(4f,0,4f);
+        rb.velocity = new Vector3(4f * randomSign(),0,4f * randomSign());
 
         
 
    }
     void FixedUpdate(){
-        Debug.Log("Velocity: " + rb.velocity + ", Magnitude: " + rb.velocity.magnitude);
+        //Debug.Log("Velocity: " + rb.velocity + ", Magnitude: " + rb.velocity.magnitude);
         lastVelocity = rb.velocity;
         keepFluidMovement();
         

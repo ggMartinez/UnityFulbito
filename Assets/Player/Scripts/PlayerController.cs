@@ -48,4 +48,14 @@ public class PlayerController : MonoBehaviour
         rightHinge.useLimits = true;
 
     }
+
+    public void ExitGame(InputAction.CallbackContext context)
+    {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+        Application.Quit();
+
+
+    }
 }
